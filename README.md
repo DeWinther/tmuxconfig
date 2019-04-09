@@ -215,7 +215,8 @@ To make use of these symbols, there are several options:
 [terminal support]: http://powerline.readthedocs.io/en/master/usage.html#usage-terminal-emulators
 [Powerline manual]: http://powerline.readthedocs.org/en/latest/installation.html#fonts-installation
 
-Please see the [Powerline manual] for further details.
+Please see the [Powerline manual] for further details. Also can install the otf file and enable it by terminal
+(for macOS, Terminal->Preference->Text->change font).
 
 Then edit the `~/.tmux.conf.local` file (`<prefix> e`) and adjust the following
 variables:
