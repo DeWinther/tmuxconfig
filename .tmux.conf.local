@@ -266,7 +266,7 @@ tmux_conf_theme_clock_style='24'
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=true
+tmux_conf_copy_to_os_clipboard=false
 
 
 # -- user customizations -------------------------------------------------------
@@ -275,8 +275,8 @@ tmux_conf_copy_to_os_clipboard=true
 # increase history size
 #set -g history-limit 10000
 
-# start with mouse mode enabled
-#set -g mouse on
+# start with mouse mode enabled/disabled
+set -g mouse off
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
