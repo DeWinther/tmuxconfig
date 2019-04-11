@@ -141,3 +141,4 @@ alias zk="cd /Users/chaoma/harmony/zk-dai"
 # http://man7.org/linux/man-pages/man5/dir_colors.5.html for details
 # add this line for light terminal color scheme
 LS_COLORS="di=0;47:ln=35;47:so=32;47:pi=33;47:ex=31;47:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+alias ls='ls -G'
