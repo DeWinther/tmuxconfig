@@ -117,7 +117,6 @@ Development][bhtmux2] by [@bphogan].
 * optional highlight of focused pane (tmux `>= 2.1`)
 * configurable new windows and panes behavior (optionally retain current path)
 * SSH/Mosh aware split pane (reconnects to remote server)
-* copy to OS clipboard (needs [`reattach-to-user-namespace`][reattach-to-user-namespace]
   on macOS, `xsel` or `xclip` on Linux)
 * [Facebook PathPicker][] integration if available
 * [Urlview][] integration if available
@@ -136,11 +135,6 @@ state in its own window. You can then minimize a pane by using `<prefix> +`
 either from the source window or the maximized window.
 
 ![Maximize pane](https://cloud.githubusercontent.com/assets/553208/9890858/ee3c0ca6-5c02-11e5-890e-05d825a46c92.gif)
-
-Mouse mode allows you to set the active window, set the active pane, resize
-panes and automatically switches to copy-mode to select text.
-
-![Mouse mode](https://cloud.githubusercontent.com/assets/553208/9890797/8dffe542-5c02-11e5-9c06-a25b452e6fcc.gif)
 
 ## Bindings
 
@@ -179,24 +173,6 @@ This configuration uses the following bindings:
 
 - `<prefix> U` launches Urlview (if available)
 - `<prefix> F` launches Facebook PathPicker (if available)
-
-- `<prefix> Enter` enters copy-mode
-- `<prefix> b` lists the paste-buffers
-- `<prefix> p` pastes from the top paste-buffer
-- `<prefix> P` lets you choose the paste-buffer to paste from
-
-Additionally, `copy-mode-vi` matches [my own Vim configuration][]
-
-[my own vim configuration]: https://github.com/gpakosz/.vim.git
-
-Bindings for `copy-mode-vi`:
-
-- `v` begins selection / visual mode
-- `C-v` toggles between blockwise visual mode and visual mode
-- `H` jumps to the start of line
-- `L` jumps to the end of line
-- `y` copies the selection to the top paste-buffer
-- `Escape` cancels the current operation
 
 ## Configuration
 
@@ -287,23 +263,3 @@ tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?
 ![Weather information from wttr.in](https://user-images.githubusercontent.com/553208/52175490-07797c00-27a5-11e9-9fb6-42eec4fe4188.png)
 
 [wttr.in]: https://github.com/chubin/wttr.in#one-line-output
-
-### Accessing the macOS clipboard from within tmux sessions
-
-[Chris Johnsen created the `reattach-to-user-namespace`
-utility][reattach-to-user-namespace] that makes `pbcopy` and `pbpaste` work
-again within tmux.
-
-To install `reattach-to-user-namespace`, use either [MacPorts][] or
-[Homebrew][]:
-
-    $ port install tmux-pasteboard
-
-or
-
-    $ brew install reattach-to-user-namespace
-
-Once installed, `reattach-to-usernamespace` will be automatically detected.
-
-[macports]: http://www.macports.org/
-[homebrew]: http://brew.sh/
