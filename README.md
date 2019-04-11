@@ -74,24 +74,53 @@ Development][bhtmux2] by [@bphogan].
   In my MacOS terminal, the error is caused by battery charging symbol width mis-match.
   To fix it, use iTerm2 instead iTerm and turn off "use Unicode version 9 widths".
 
-## Features
+- **iTerm2 light scheme is not compatible with oh-my-zsh color scheme. Especially,
+  the directory color is not contrast in light scheme**
+  This is not a tmux issue, but I just added here.
 
-- `C-a` acts as secondary prefix, while keeping default `C-b` prefix
-- visual theme inspired by [Powerline][]
-- [maximize any pane to a new window with `<prefix> +`][maximize-pane]
-- SSH/Mosh aware username and hostname status line information
-- mouse mode toggle with `<prefix> m`
-- automatic usage of [`reattach-to-user-namespace`][reattach-to-user-namespace]
+  ISO 6429 color sequences are composed of sequences of numbers
+  separated by semicolons. The most common codes are:
+
+               0   to restore default color
+               1   for brighter colors
+               4   for underlined text
+               5   for flashing text
+              30   for black foreground
+              31   for red foreground
+              32   for green foreground
+              33   for yellow (or brown) foreground
+              34   for blue foreground
+              35   for purple foreground
+              36   for cyan foreground
+              37   for white (or gray) foreground
+              40   for black background
+              41   for red background
+              42   for green background
+              43   for yellow (or brown) background
+              44   for blue background
+              45   for purple background
+              46   for cyan background
+              47   for white (or gray) background
+
+  Define LS_COLORS="di=0;47:ln=35;47:so=32;47:pi=33;47:ex=31;47:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+  or adjust it accordingly.
+
+* `C-a` acts as secondary prefix, while keeping default `C-b` prefix
+* visual theme inspired by [Powerline][]
+* [maximize any pane to a new window with `<prefix> +`][maximize-pane]
+* SSH/Mosh aware username and hostname status line information
+* mouse mode toggle with `<prefix> m`
+* automatic usage of [`reattach-to-user-namespace`][reattach-to-user-namespace]
   if available
-- laptop battery status line information
-- uptime status line information
-- optional highlight of focused pane (tmux `>= 2.1`)
-- configurable new windows and panes behavior (optionally retain current path)
-- SSH/Mosh aware split pane (reconnects to remote server)
-- copy to OS clipboard (needs [`reattach-to-user-namespace`][reattach-to-user-namespace]
+* laptop battery status line information
+* uptime status line information
+* optional highlight of focused pane (tmux `>= 2.1`)
+* configurable new windows and panes behavior (optionally retain current path)
+* SSH/Mosh aware split pane (reconnects to remote server)
+* copy to OS clipboard (needs [`reattach-to-user-namespace`][reattach-to-user-namespace]
   on macOS, `xsel` or `xclip` on Linux)
-- [Facebook PathPicker][] integration if available
-- [Urlview][] integration if available
+* [Facebook PathPicker][] integration if available
+* [Urlview][] integration if available
 
 [powerline]: https://github.com/Lokaltog/powerline
 [maximize-pane]: http://pempek.net/articles/2013/04/14/maximizing-tmux-pane-new-window/
