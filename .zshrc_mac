@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/chaoma/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,13 +109,6 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 alias ll="ls -lrth"
 
-export PATH="/Users/chaoma/go/src/github.com/ethereum/go-ethereum/build/bin:/usr/local/include/:$PATH"
-
-# node-gyp (called by npm install) need python2.7; however npm config set python /path/to/executable/python2.7 not work
-# remove line below to change the default python version to 2.7 to avoid the error
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/:/usr/local/opt/openssl/include/"
-
 #python
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
@@ -124,17 +117,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:/Users/chaoma/.nvm/versions/node/v10.15.2:$HOME/.cargo/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
-
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Users/chaoma/Downloads/Visual Studio Code.app/Contents/Resources/app/bin"
-
-alias ctags="`brew --prefix`/bin/ctags"
-alias ws="cd /Users/chaoma/go/src/github.com/harmony-one/harmony"
-alias zk="cd /Users/chaoma/harmony/zk-dai"
 
 
 # LS_COLORS is used to define "ls" command colors for various file/directory types
